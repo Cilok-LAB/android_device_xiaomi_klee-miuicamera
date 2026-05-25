@@ -1,0 +1,47 @@
+From 0783acf77201432b9dc3b1f8be82f53a2f81ab1c Mon Sep 17 00:00:00 2001
+From: kylieeXD <khayloaftck@gmail.com>
+Date: Sun, 24 May 2026 22:12:19 +0700
+Subject: [PATCH 4/8] Always run orientation conversion without checking
+
+Signed-off-by: kylieeXD <khayloaftck@gmail.com>
+---
+ .../com/xiaomi/camera/cta/requester/c.smali      | 16 +---------------
+ 1 file changed, 1 insertion(+), 15 deletions(-)
+
+diff --git a/smali_classes3/com/xiaomi/camera/cta/requester/c.smali b/smali_classes3/com/xiaomi/camera/cta/requester/c.smali
+index 1cc116ef..8aea31dd 100644
+--- a/smali_classes3/com/xiaomi/camera/cta/requester/c.smali
++++ b/smali_classes3/com/xiaomi/camera/cta/requester/c.smali
+@@ -155,28 +155,14 @@
+ .end method
+ 
+ .method public static d(LRd/c;)V
+-    .locals 1
++    .locals 0
+     .param p0    # LRd/c;
+         .annotation build Landroidx/annotation/NonNull;
+         .end annotation
+     .end param
+ 
+-    invoke-static {}, Lcom/xiaomi/camera/cta/requester/c;->c()Z
+-
+-    move-result v0
+-
+-    if-eqz v0, :cond_0
+-
+     invoke-interface {p0}, LRd/c;->a()V
+ 
+-    goto :goto_0
+-
+-    :cond_0
+-    sget-object v0, Lcom/xiaomi/camera/cta/requester/c$b;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+-
+-    invoke-virtual {v0, p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->add(Ljava/lang/Object;)Z
+-
+-    :goto_0
+     return-void
+ .end method
+ 
+-- 
+2.54.0
+

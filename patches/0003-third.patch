@@ -1,0 +1,31 @@
+From 841675eec7407ff82f5173c26a2c3fed4cdc3e2a Mon Sep 17 00:00:00 2001
+From: kylieeXD <khayloaftck@gmail.com>
+Date: Sun, 24 May 2026 18:51:05 +0700
+Subject: [PATCH 3/8] Bypass snapshotInProgress flag so that the UI never locks
+
+Signed-off-by: kylieeXD <khayloaftck@gmail.com>
+---
+ .../com/android/camera/module/Camera2Module.smali           | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/smali_classes2/com/android/camera/module/Camera2Module.smali b/smali_classes2/com/android/camera/module/Camera2Module.smali
+index 326a2c44..c77c4a6b 100644
+--- a/smali_classes2/com/android/camera/module/Camera2Module.smali
++++ b/smali_classes2/com/android/camera/module/Camera2Module.smali
+@@ -21914,11 +21914,9 @@
+ .method public isDoingAction()Z
+     .locals 1
+ 
+-    invoke-super {p0}, Lcom/xiaomi/camera/module/PhotoBase;->isDoingAction()Z
+-
+-    move-result v0
++    const/4 v0, 0x0
+ 
+-    if-nez v0, :cond_1
++    return v0
+ 
+     iget-object p0, p0, Lcom/android/camera/module/Camera2Module;->mMultiCap:Lz3/s;
+ 
+-- 
+2.54.0
+

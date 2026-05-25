@@ -1,0 +1,38 @@
+From c611a27e4a7abb8448c79758ffdd7172a56ed82b Mon Sep 17 00:00:00 2001
+From: kylieeXD <khayloaftck@gmail.com>
+Date: Sun, 24 May 2026 22:25:35 +0700
+Subject: [PATCH 5/8] Add missing obfu_res assets for west coast princess
+
+Signed-off-by: kylieeXD <khayloaftck@gmail.com>
+---
+ .../res/drawable/ic_west_coast_princess.webp       | Bin 0 -> 83 bytes
+ .../obfu_res/res/drawable/ic_west_coast_queen.webp | Bin 0 -> 83 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 assets/obfu_res/res/drawable/ic_west_coast_princess.webp
+ create mode 100644 assets/obfu_res/res/drawable/ic_west_coast_queen.webp
+
+diff --git a/assets/obfu_res/res/drawable/ic_west_coast_princess.webp b/assets/obfu_res/res/drawable/ic_west_coast_princess.webp
+new file mode 100644
+index 0000000000000000000000000000000000000000..1b72e39b3c492eb83f3f9aab783095491424bafc
+GIT binary patch
+literal 83
+zcmeAS@N?(olHy`uVBq!ia0y~yU|<Ac4mJh`26@pVoghwekh>GZx^prw!Kz#wLnOkJ
+f6A}`B@G~&7FftS<q;fMbFfe$!`njxgN@xNARXh-1
+
+literal 0
+HcmV?d00001
+
+diff --git a/assets/obfu_res/res/drawable/ic_west_coast_queen.webp b/assets/obfu_res/res/drawable/ic_west_coast_queen.webp
+new file mode 100644
+index 0000000000000000000000000000000000000000..1b72e39b3c492eb83f3f9aab783095491424bafc
+GIT binary patch
+literal 83
+zcmeAS@N?(olHy`uVBq!ia0y~yU|<Ac4mJh`26@pVoghwekh>GZx^prw!Kz#wLnOkJ
+f6A}`B@G~&7FftS<q;fMbFfe$!`njxgN@xNARXh-1
+
+literal 0
+HcmV?d00001
+
+-- 
+2.54.0
+

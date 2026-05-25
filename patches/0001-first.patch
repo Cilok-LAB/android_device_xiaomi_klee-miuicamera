@@ -1,0 +1,33 @@
+From 72bec05b0fa06a524e688191d71856564985ffac Mon Sep 17 00:00:00 2001
+From: kylieeXD <khayloaftck@gmail.com>
+Date: Sun, 24 May 2026 16:47:13 +0700
+Subject: [PATCH 1/8] Skip all CTA launch
+
+Signed-off-by: kylieeXD <khayloaftck@gmail.com>
+---
+ smali/com/android/camera/Camera.smali | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/smali/com/android/camera/Camera.smali b/smali/com/android/camera/Camera.smali
+index c61edffe..b6204a51 100644
+--- a/smali/com/android/camera/Camera.smali
++++ b/smali/com/android/camera/Camera.smali
+@@ -1880,13 +1880,9 @@
+ 
+     :cond_9
+     :try_start_0
+-    iput-boolean v3, p0, Lcom/android/camera/ActivityBase;->w0:Z
+-
+-    new-instance p1, LB/Y0;
+-
+-    invoke-direct {p1, p0}, LB/Y0;-><init>(Lcom/android/camera/Camera;)V
++    iput-boolean v4, p0, Lcom/android/camera/ActivityBase;->w0:Z
+ 
+-    invoke-static {p0, p1}, Lcom/xiaomi/camera/cta/requester/d;->c(Landroidx/fragment/app/FragmentActivity;Lcom/xiaomi/camera/cta/requester/a;)V
++    goto :goto_0
+ 
+     invoke-static {}, LP3/m;->h()LP3/m;
+ 
+-- 
+2.54.0
+

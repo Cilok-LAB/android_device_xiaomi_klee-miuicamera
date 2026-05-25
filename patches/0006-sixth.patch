@@ -1,0 +1,51 @@
+From b37db871b4ac3d9e81fe2064f7259ae072e2b2b1 Mon Sep 17 00:00:00 2001
+From: kylieeXD <khayloaftck@gmail.com>
+Date: Sun, 24 May 2026 22:39:46 +0700
+Subject: [PATCH 6/8] Gracefully handle missing AudioParaManger class for AOSP
+
+Signed-off-by: kylieeXD <khayloaftck@gmail.com>
+---
+ smali/E/a.smali | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/smali/E/a.smali b/smali/E/a.smali
+index 2ba44471..da0e47f4 100644
+--- a/smali/E/a.smali
++++ b/smali/E/a.smali
+@@ -69,12 +69,16 @@
+ 
+     .line 8
+     :cond_0
++    :try_start_0
+     new-instance v0, Landroid/media/AudioParaManger;
+ 
+     invoke-direct {v0, p2, p1}, Landroid/media/AudioParaManger;-><init>(Landroid/media/AudioRecord;Landroid/content/Context;)V
+ 
+     iput-object v0, p0, LE/a;->a:Ljava/lang/Object;
++    :try_end_0
++    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+ 
++    :catch_0
+     :cond_1
+     return-void
+ .end method
+@@ -110,12 +114,16 @@
+ 
+     .line 4
+     :cond_0
++    :try_start_1
+     new-instance v0, Landroid/media/AudioParaManger;
+ 
+     invoke-direct {v0, p2, p1}, Landroid/media/AudioParaManger;-><init>(Landroid/media/MediaRecorder;Landroid/content/Context;)V
+ 
+     iput-object v0, p0, LE/a;->a:Ljava/lang/Object;
++    :try_end_1
++    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+ 
++    :catch_1
+     :cond_1
+     return-void
+ .end method
+-- 
+2.54.0
+
