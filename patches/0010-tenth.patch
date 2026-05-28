@@ -1,0 +1,30 @@
+From 50611f5ff3a272569e5abc8c3ccaf77811822227 Mon Sep 17 00:00:00 2001
+From: kylieeXD <khayloaftck@gmail.com>
+Date: Thu, 28 May 2026 14:05:22 +0700
+Subject: [PATCH] Stub MiuiSettings call for AOSP
+
+Signed-off-by: kylieeXD <khayloaftck@gmail.com>
+---
+ smali/nf/a.smali | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/smali/nf/a.smali b/smali/nf/a.smali
+index 25561ea5..72d57e59 100644
+--- a/smali/nf/a.smali
++++ b/smali/nf/a.smali
+@@ -376,11 +376,7 @@
+ 
+     move-result-object v1
+ 
+-    const-string v3, "light_camera_state"
+-
+-    invoke-static {v1, v3, v2}, Landroid/provider/MiuiSettings$System;->getBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
+-
+-    move-result v1
++    const/4 v1, 0x0
+ 
+     const/4 v3, 0x1
+ 
+-- 
+2.54.0
+
